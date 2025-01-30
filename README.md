@@ -59,7 +59,7 @@ Before we dive in, ensure you have:
 To get started, clone this repository and navigate into it:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/galaga-rust-tutorial.git
+git clone https://github.com/GandalfTheGrey-DEV/galaga_course.git
 cd galaga-rust-tutorial
 ```
 
