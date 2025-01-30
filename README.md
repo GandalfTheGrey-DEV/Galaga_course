@@ -60,7 +60,7 @@ To get started, clone this repository and navigate into it:
 
 ```bash
 git clone https://github.com/GandalfTheGrey-DEV/galaga_course.git
-cd galaga-rust-tutorial
+cd galaga_course
 ```
 
 Then, build and run the starter template:
