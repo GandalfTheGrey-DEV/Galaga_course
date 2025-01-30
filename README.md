@@ -121,4 +121,4 @@ This is an open-source project licensed under the MIT License. See the [LICENSE]
 
 ---
 
-### Ready? Let’s Build Galaga in Rust! 🚀
+### Ready? Let’s Build Galaga in Rust! 🚀☕️
