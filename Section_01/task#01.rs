@@ -9,36 +9,93 @@
 // Recap:
 // By the end of this section, we will have a game board with a player displayed on it.
 
-// TASK #01: Define Game Board Dimensions
-// - Use two constants to represent the board's width and height (type: u32).
-// - Since the board dimensions are fixed, use `const` as it ensures the variables remain immutable.
-// - Set their values to your desired board width and height. For example: 10x10, 20x20, etc.
-
-// TASK #02: Define the starting lives for the player
-// - Use a constant variable to represent the player's starting lives (type: u8).
-// - Since the player's starting lives will never change, we use `const`, which ensures the variable remains immutable.
-// - Set its value to your desired number of lives. For example: 5, 10, etc.
 
 
-// TASK #03: Define a Player struct that holds the player's display character, lives, and current position.
-// - Create a struct called `Player`.
-// - Add three fields: `display_character`, `lives`, and `current_position`.
-// - `display_character` will have the type `char`.
-// - `lives` will have the type `u8`.
-// - `current_position` will be a tuple of type `(u8, u8)`.
 
-// NOTICE: You have not yet learned what a tuple is. Here is a brief explanation.
-// A tuple is a fixed-size collection of values of different types.
-// Example:
-//let my_tuple = (42, 54);
 
-// Accessing elements inside the touple:
-//let first = my_tuple.0; // 42
+// TASK 0: Create the Main Function
+// - Create a main function to set up the testing environment. You will add code here to test each task step by step.
 
-// More info: https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
 
-// TASK #04: Define an implementation for the struct Player.
-// - Create an `impl` block for the `Player` struct.
-// - Define a method called `new` that takes the parameter `start_position`, which is a tuple of two `u8`s.
-// - The method must return `Self`.
-// - Now, define the necessary fields for the struct.
+
+
+
+// TASK 1: Define Game Board Dimensions
+// - Define two constants for the game board's width and height (type: u32).
+// - Use `const` to make these values immutable.
+// - Set their values to the desired board dimensions, e.g., 10x10 or 20x20.
+
+// To test Task #1, you can print the constants in the main function:
+// println!("Board Dimensions: {} x {}", BOARD_WIDTH, BOARD_HEIGHT);
+
+// NOTICE: Once Task #1 is complete, you can comment out this test code.
+
+// TASK 2: Define the Starting Lives for the Player
+// - Define a constant for the player's starting lives (type: u8).
+// - Use `const` for immutability.
+// - Set the value to the desired number of lives (e.g., 5 or 10).
+
+// To test Task #2, you can print the player's starting lives in the main function:
+// println!("Player's Starting Lives: {}", STARTING_LIVES);
+
+// NOTICE: Once Task #2 is complete, you can comment out this test code.
+
+
+
+
+
+// TASK 3: Define a Player Struct
+// - Create a struct called `Player` with three fields:
+//     - `display_character` (type: char),
+//     - `lives` (type: u8),
+//     - `current_position` (type: (u8, u8)).
+// This struct will represent the player on the board.
+
+// To test Task #3, create an instance of `Player` in the main function:
+// let player = Player {
+//     display_character: '@',
+//     lives: STARTING_LIVES,
+//     current_position: (5, 5),
+// };
+// println!("Player Info: {:?}", player);
+
+// NOTICE: Once Task #3 is complete, you can comment out this test code.
+
+
+
+
+
+// TASK 4: Implement the Player Struct
+// - Implement a `new` method for the `Player` struct.
+// - The `new` method should take a parameter `start_position` (a tuple of type (u8, u8)) and return a `Player` instance.
+
+// To test Task #4, you can create a player using the `new` method in the main function:
+// let player = Player::new((5, 5));
+// println!("Player Created: {:?}", player);
+
+// NOTICE: Once Task #4 is complete, you can comment out this test code.
+
+
+
+
+
+// TASK #05: We will create a struct called `GameState` that will include a hashmap linking coordinates to characters.
+// We will also add a `player` field to the `GameState` struct so we can access player data.
+
+// - Create a struct called `GameState` with two fields: `game_board` and `player`.
+// - `game_board` will be a HashMap mapping a tuple of two `u8` values to a `char`. Example:
+//   HashMap<(u8, u8), char>.
+//   This will link a pair of `u8` values representing coordinates to a character. For example, if you have a 20x20 game board and want to link position (15, 8), the hashmap will return the character stored at that coordinate.
+// - `player` will be a reference to a struct `Player`, which stores player data.
+
+// For more information on how to use HashMaps in Rust, check out the official documentation:
+// https://doc.rust-lang.org/std/collections/struct.HashMap.html
+
+// To test Task #5, you can create a `GameState` instance in the main function:
+// let mut game_board = HashMap::new();
+// game_board.insert((5, 5), '@');
+// let player = Player::new((5, 5));
+// let game_state = GameState { game_board, player: &player };
+// println!("Game State: {:?}", game_state);
+
+// NOTICE: Once Task #5 is complete, you can comment out this test code.
